@@ -11,6 +11,21 @@ class ConfigsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \DB::table('configs')->truncate();
+
+        \DB::table('configs')->insert([
+            [
+                'id'    =>  1,
+                'name'  =>  '',
+                'title' =>  '',
+                'remark'    =>  '',
+                'type'      =>  '',
+                'group'     =>  '',
+                'extra'     =>  '',
+                'value'     =>  '',
+                'sort'      =>  1,
+                'status'    =>  1,
+            ],
+        ]);
     }
 }
