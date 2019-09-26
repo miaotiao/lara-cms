@@ -4,5 +4,6 @@
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
+*.html linguist-vendored
 # composer 的时候，不会下载该文件
 CHANGELOG.md export-ignore
