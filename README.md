@@ -1,9 +1,5 @@
 # lara-cms
 
-a cms build in laravel 6.0
+第一次使用 laravel，做一个 cms 试试。
 
-test a README.md
-
-重新开始
-
-let do it
+前端的新功能暂时先不实现。
