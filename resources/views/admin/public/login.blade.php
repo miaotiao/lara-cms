@@ -25,6 +25,7 @@
                                 <input type="password" name="password" placeholder="请填写密码" autocomplete="off" />
                             </div>
                             <span class="placeholder_copy placeholder_pwd">请填写密码</span>
+                            {{-- // 暂时不需要验证码
                             <div class="item verifycode">
                                 <i class="icon-login-verifycode"></i>
                                 <input type="text" name="verify" placeholder="请填写验证码" autocomplete="off">
@@ -34,6 +35,7 @@
                             <div>
                                 <img class="verifyimg reloadverify" alt="点击切换" src="{:U('Public/verify')}">
                             </div>
+                            --}}
                         </div>
                         <div class="login_btn_panel">
                             <button class="login-btn" type="submit">
