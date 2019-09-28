@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>欢迎您登录后台管理</title>
-        <link rel="stylesheet" type="text/css" href="/assets/admin/css/login.css" media="all">
-        <link rel="stylesheet" type="text/css" href="/assets/admin/css/{$Think.config.COLOR_STYLE}.css" media="all">
+        <link rel="stylesheet" href="/assets/admin/css/login.css" media="all">
+        <link rel="stylesheet" href="/assets/admin/css/{{ config('system.color_style', 'default_color') }}.css" media="all">
     </head>
     <body id="login-page">
         <div id="main-content">

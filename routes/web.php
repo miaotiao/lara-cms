@@ -90,3 +90,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
         Route::get('clear','ConfigsController@clear');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

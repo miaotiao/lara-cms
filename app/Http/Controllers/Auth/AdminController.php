@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -12,6 +13,11 @@ class AdminController extends Controller
 
     // 登陆后重定向
     protected $redirectTo = '/admin/index/index';
+
+    public function __construct()
+    {
+        $this->middleware('guest:admin')->except('logout');
+    }
 
     /**
      * 看守器
