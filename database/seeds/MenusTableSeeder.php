@@ -11,9 +11,9 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('Menus')->truncate();
+        \DB::table('menus')->truncate();
 
-        \DB::table('Menus')->insert([
+        \DB::table('menus')->insert([
             [
                 'id'                =>  1,
                 'title'             =>  '首页',
