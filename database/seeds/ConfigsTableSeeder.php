@@ -75,7 +75,7 @@ class ConfigsTableSeeder extends Seeder
                 'status'    =>  1,
             ],
             [
-                'id'        =>  4,
+                'id'        =>  6,
                 'name'      =>  'base.group',
                 'title'     =>  '配置分组',
                 'remark'    =>  '',

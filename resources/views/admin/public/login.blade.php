@@ -12,12 +12,12 @@
             <div class="login-body">
                 <div class="login-main pr">
                     <form action="{{ url('auth/admin/login') }}" method="post" class="login-form">
-                        {{ csrf_field() }}
+                        @csrf
                         <h3 class="welcome"><i class="login-logo"></i>管理平台</h3>
                         <div id="itemBox" class="item-box">
                             <div class="item">
                                 <i class="icon-login-user"></i>
-                                <input type="text" name="username" placeholder="请填写用户名" autocomplete="off" />
+                                <input type="text" name="email" placeholder="请填写用户名" autocomplete="off" />
                             </div>
                             <span class="placeholder_copy placeholder_un">请填写用户名</span>
                             <div class="item b0">
@@ -25,7 +25,6 @@
                                 <input type="password" name="password" placeholder="请填写密码" autocomplete="off" />
                             </div>
                             <span class="placeholder_copy placeholder_pwd">请填写密码</span>
-                            {{-- // 暂时不需要验证码
                             <div class="item verifycode">
                                 <i class="icon-login-verifycode"></i>
                                 <input type="text" name="verify" placeholder="请填写验证码" autocomplete="off">
@@ -33,9 +32,8 @@
                             </div>
                             <span class="placeholder_copy placeholder_check">请填写验证码</span>
                             <div>
-                                <img class="verifyimg reloadverify" alt="点击切换" src="{:U('Public/verify')}">
+                                <img class="verifyimg reloadverify" alt="点击切换" src="{{captcha_src('inverse')}}">
                             </div>
-                            --}}
                         </div>
                         <div class="login_btn_panel">
                             <button class="login-btn" type="submit">
@@ -71,21 +69,21 @@
                 $("button:submit").removeClass("log-in").attr("disabled", false);
             });
 
-        $("form").submit(function(){
-            var self = $(this);
-            $.post(self.attr("action"), self.serialize(), success, "json");
-            return false;
+        // $("form").submit(function(){
+        //     var self = $(this);
+        //     $.post(self.attr("action"), self.serialize(), success, "json");
+        //     return false;
 
-            function success(data){
-                if(data.status){
-                    window.location.href = data.url;
-                } else {
-                    self.find(".check-tips").text(data.info);
-                    //刷新验证码
-                    $(".reloadverify").click();
-                }
-            }
-        });
+        //     function success(data){
+        //         if(data.status){
+        //             window.location.href = data.url;
+        //         } else {
+        //             self.find(".check-tips").text(data.info);
+        //             //刷新验证码
+        //             $(".reloadverify").click();
+        //         }
+        //     }
+        // });
 
         $(function(){
             //初始化选中用户名输入框
@@ -93,11 +91,7 @@
             //刷新验证码
             var verifyimg = $(".verifyimg").attr("src");
             $(".reloadverify").click(function(){
-                if( verifyimg.indexOf('?')>0){
-                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
-                }else{
-                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
-                }
+                $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
             });
 
             //placeholder兼容性

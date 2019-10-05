@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('admin.login')->except('logout');// 排除登出
     }
 
     /**

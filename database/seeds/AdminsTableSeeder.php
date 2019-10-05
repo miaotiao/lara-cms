@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class AdminsTableSeeder extends Seeder
 {
@@ -11,19 +12,18 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('configs')->truncate();
+        \DB::table('admins')->truncate();
 
-        $time = time();
-        \DB::table('configs')->insert([
+        \DB::table('admins')->insert([
             [
                 'id'                =>  1,
                 'name'              =>  'root',
                 'email'             =>  '123@qq.com',
-                'email_verified_at' =>  $time,
-                'password'          =>  bcrypt('secret'),
-                'remember_token'    =>  str_random(10),
-                'create_at'         =>  $time,
-                'update_at'         =>  $time,
+                'email_verified_at' =>  now(),
+                'password'          =>  bcrypt('root'),
+                'remember_token'    =>  Str::random(10),
+                'created_at'         =>  now(),
+                'updated_at'         =>  now(),
             ],
         ]);
     }

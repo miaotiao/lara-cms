@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::namespace('Auth')->prefix('auth')->as('auth.')->group(function(){
+Route::namespace('Auth')->prefix('auth')->group(function(){
     Route::prefix('admin')->group(function(){
         Route::post('login','AdminController@login');
     });
@@ -32,7 +32,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
     });
 });
 // 登陆后的页面
-Route::namespace('Admin')->prefix('admin')->group(function(){
+Route::namespace('Admin')->prefix('admin')->middleware('admin.auth')->group(function(){
     // 首页控制器
     Route::prefix('index')->group(function(){
         Route::get('index','IndexController@index');
