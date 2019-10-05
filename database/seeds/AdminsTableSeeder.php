@@ -20,7 +20,7 @@ class AdminsTableSeeder extends Seeder
                 'name'              =>  'root',
                 'email'             =>  '123@qq.com',
                 'email_verified_at' =>  now(),
-                'password'          =>  bcrypt('root'),
+                'password'          =>  bcrypt('rootroot'),
                 'remember_token'    =>  Str::random(10),
                 'created_at'         =>  now(),
                 'updated_at'         =>  now(),
