@@ -84,6 +84,20 @@ class MenusTableSeeder extends Seeder
                 'created_at'         =>  now(),
                 'updated_at'         =>  now(),
             ],
+            [
+                'id'                =>  6,
+                'title'             =>  '其他',
+                'pid'               =>  0,
+                'sort'              =>  0,
+                'url'               =>  'admin/Other/index',
+                'hide'              =>  0,
+                'remark'            =>  '',
+                'group'             =>  '',
+                'is_dev'            =>  0,
+                'status'            =>  1,
+                'created_at'         =>  now(),
+                'updated_at'         =>  now(),
+            ],
         ]);
     }
 }
