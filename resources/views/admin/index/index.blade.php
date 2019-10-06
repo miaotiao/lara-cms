@@ -1,5 +1,7 @@
 @extends('layouts.think')
 
+@section('meta_title','首页')
+
 @section('sidebar') @endsection
 
 @section('style')
