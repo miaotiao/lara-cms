@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\BaseController;
 use DB;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     /**
      * 后台首页

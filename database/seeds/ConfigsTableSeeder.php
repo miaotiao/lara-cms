@@ -86,6 +86,18 @@ class ConfigsTableSeeder extends Seeder
                 'sort'      =>  1,
                 'status'    =>  1,
             ],
+            [
+                'id'        =>  7,
+                'name'      =>  'style.color',
+                'title'     =>  '后台色系',
+                'remark'    =>  '',
+                'type'      =>  '4',
+                'group'     =>  '4',
+                'extra'     =>  '',
+                'value'     =>  'blue_color',
+                'sort'      =>  1,
+                'status'    =>  1,
+            ],
         ]);
     }
 }

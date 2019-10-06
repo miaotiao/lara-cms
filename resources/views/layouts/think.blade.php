@@ -2,23 +2,23 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('meta_title')|乐之管理平台</title>
+    <title>@yield('meta_title')|管理平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
     <link rel="stylesheet" href="/assets/admin/css/base.css" media="all">
     <link rel="stylesheet" href="/assets/admin/css/common.css" media="all">
     <link rel="stylesheet" href="/assets/admin/css/module.css">
     <link rel="stylesheet" href="/assets/admin/css/style.css" media="all">
-    <link rel="stylesheet" href="/assets/admin/css/{$Think.config.COLOR_STYLE}.css" media="all">
+    <link rel="stylesheet" href="/assets/admin/css/{{ config('style.color') }}.css" media="all">
      <!--[if lt IE 9]>
     <script src="/assets/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
     <script src="/assets/static/jquery-2.0.3.min.js"></script>
-    <script src="/assets/static/jquery.mousewheel.js"></script>
+    <script src="/assets/admin/js/jquery.mousewheel.js"></script>
     <!--<![endif]-->
-    @yield('css')
+    @yield('style')
 </head>
 <body>
     <!-- 头部 -->
@@ -29,10 +29,9 @@
 
         <!-- 主导航 -->
         <ul class="main-nav">
-           {{-- @foreach ( __MENU__.main as $menu)
-                <li class="{$menu.class|default=''}"><a href="{$menu.url|U}">{$menu.title}</a></li>
+            @foreach ( $menus as $menu)
+                <li class=""><a href="{{ url($menu->url) }}">{{ $menu->title }}</a></li>
             @endforeach
-            --}}
         </ul>
         <!-- /主导航 -->
 
@@ -40,7 +39,7 @@
         <div class="user-bar">
             <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
             <ul class="nav-list user-menu hidden">
-                <li class="manager">你好，<em title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</em></li>
+                <li class="manager">你好，<em title="{{ Auth::guard('admin')->user()->name }}">{{ Auth::guard('admin')->user()->name }}</em></li>
                 <li><a href="{:U('User/updatePassword')}">修改密码</a></li>
                 <li><a href="{:U('User/updateNickname')}">修改昵称</a></li>
                 <li><a href="{{ url('admin/public/logout') }}">退出</a></li>
@@ -86,7 +85,6 @@
         </div>
         <div id="main" class="main">
             @section('nav')
-            <block name="nav">
             <!-- nav -->
             <notempty name="_show_nav">
             <div class="breadcrumb">
@@ -134,7 +132,7 @@
         +function(){
             var $window = $(window), $subnav = $("#subnav"), url;
             $window.resize(function(){
-                $("#main").css("min-height", $window.height() - 130);
+                $("#main").css("min-height", $window.height() - 80);
             }).resize();
 
             $.ajaxSetup({

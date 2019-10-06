@@ -8,7 +8,7 @@ class Config extends Model
 {
     public function getValueAttribute($val)
     {
-        if( is_json($val) && '[' === mb_substr($value, 0,1) ){
+        if( is_json($val) && '[' === mb_substr($val, 0,1) ){
             return json_decode($val,true);
         }
         return $val;
