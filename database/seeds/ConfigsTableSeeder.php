@@ -23,8 +23,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '1',
                 'extra'     =>  '',
                 'value'     =>  '赵钱',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  2,
@@ -35,8 +33,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '1',
                 'extra'     =>  '',
                 'value'     =>  '赵钱',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  3,
@@ -47,8 +43,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '1',
                 'extra'     =>  '',
                 'value'     =>  '',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  4,
@@ -59,8 +53,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '1',
                 'extra'     =>  '0:关闭;1:开启;',
                 'value'     =>  '1',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  5,
@@ -71,8 +63,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '4',
                 'extra'     =>  '',
                 'value'     =>  '0:数字;1:字符串;2:文本;3:数组;4:枚举',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  6,
@@ -83,8 +73,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '4',
                 'extra'     =>  '',
                 'value'     =>  '1:基础;2:内容;3:用户;4:系统;',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
             [
                 'id'        =>  7,
@@ -95,8 +83,6 @@ class ConfigsTableSeeder extends Seeder
                 'group'     =>  '4',
                 'extra'     =>  '',
                 'value'     =>  'blue_color',
-                'sort'      =>  1,
-                'status'    =>  1,
             ],
         ]);
     }

@@ -33,7 +33,7 @@ class MenusTableSeeder extends Seeder
                 'title'             =>  '内容',
                 'pid'               =>  0,
                 'sort'              =>  0,
-                'url'               =>  'admin/article/index',
+                'url'               =>  'admin/article/list',
                 'hide'              =>  0,
                 'remark'            =>  '',
                 'group'             =>  '',

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
            AdminsTableSeeder::class,
            ConfigsTableSeeder::class,
            MenusTableSeeder::class,
+           CategoriesTableSeeder::class,
         ]);
         // $this->call(AdminsTableSeeder::class);
     }
